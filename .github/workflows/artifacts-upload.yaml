@@ -4,7 +4,7 @@ name: artifacts-upload
 on: 
   push:
     branches:
-      - main
+      - Main
 
 jobs:
   archive-build-artifacts:
