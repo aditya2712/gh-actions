@@ -1,0 +1,19 @@
+# Github action to upload artifacts to google drive
+name: artifacts-upload
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  archive-build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step-1 -- Create random files
+        run: echo "Hello world of github actions" > hello_world.txt
+      - name: Step-2 -- Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: hello_world.txt
+          path: hello_world.txt
